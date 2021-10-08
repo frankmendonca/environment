@@ -1,0 +1,21 @@
+---
+- name: "Postman - Check installation"
+  stat: path=/opt/Postman
+  register: postman
+- name: "Postman - Download"
+  command: "wget -qc -O /opt/Postman-linux-x86_64.tar.gz https://dl.pstmn.io/download/latest/linux64"
+  when: (not postman.stat.exists)
+- name: "Postman - Install"
+  command: "tar xf /opt/Postman-linux-x86_64.tar.gz -C /opt"
+  when: (not postman.stat.exists)
+- name: "Postman - Change Owner"
+  command: "chown -R {{user}}:{{group}} /opt/Postman"
+  args:
+    warn: false
+  when: (not postman.stat.exists)
+- name: "Postman - Create Menu Icon"
+  copy: src=assets/postman.desktop dest=/usr/share/applications/postman.desktop
+  when: (not postman.stat.exists)
+- name: "Postman - Clean"
+  command: "rm -f /opt/Postman-linux-x86_64.tar.gz"
+  when: (not postman.stat.exists)

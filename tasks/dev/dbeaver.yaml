@@ -1,0 +1,5 @@
+---
+- name: "DBeaver"
+  ansible.builtin.apt:
+    name: dbeaver-ce
+    state: latest

@@ -1,0 +1,5 @@
+---
+- name: "Google Chrome"
+  ansible.builtin.apt:
+    name: google-chrome-stable
+    state: latest

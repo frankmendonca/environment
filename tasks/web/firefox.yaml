@@ -1,0 +1,5 @@
+---
+- name: "Firefox"
+  ansible.builtin.apt:
+    name: firefox
+    state: latest

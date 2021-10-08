@@ -1,0 +1,5 @@
+---
+- name: "VS Code"
+  ansible.builtin.apt:
+    name: code
+    state: latest

@@ -1,0 +1,5 @@
+---
+- name: "Spotify"
+  ansible.builtin.apt:
+    name: spotify-client
+    state: latest

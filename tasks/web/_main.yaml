@@ -1,0 +1,3 @@
+---
+- include: firefox.yaml
+- include: google-chrome.yaml

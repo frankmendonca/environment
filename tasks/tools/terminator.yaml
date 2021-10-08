@@ -1,0 +1,5 @@
+---
+- name: "Terminator"
+  ansible.builtin.apt:
+    name: terminator
+    state: latest
