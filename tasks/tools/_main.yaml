@@ -1,4 +1,5 @@
 ---
+- include: vim.yaml
 - include: terminator.yaml
 - include: flameshot.yaml
 - include: spotify.yaml
