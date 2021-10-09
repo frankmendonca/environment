@@ -1,0 +1,5 @@
+---
+- name: "GPG"
+  apt:
+    name: gpg
+    state: latest
