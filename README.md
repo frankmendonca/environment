@@ -32,8 +32,14 @@ $ docker run --rm -v $PWD:/ansible -it ubuntu bash
 
 ### Inside
 
-
 ```shell
 # cd /ansible
+```
+```shell
 # ./run-sudo-ansible-playbook.sh
+```
+
+or only "web"
+```shell
+# ./run-sudo-ansible-playbook.sh --tags web
 ```
