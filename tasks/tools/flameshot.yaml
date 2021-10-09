@@ -1,5 +1,5 @@
 ---
 - name: "Flameshot"
-  ansible.builtin.apt:
+  apt:
     name: flameshot
     state: latest
