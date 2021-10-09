@@ -1,5 +1,10 @@
 ---
 - name: "DBeaver"
-  ansible.builtin.apt:
-    name: dbeaver-ce
-    state: latest
+  block:
+  - name: "DBeaver - Add Repository"
+    apt_repository:
+      repo: ppa:serge-rider/dbeaver-ce
+  - name: "DBeaver - Install"
+    apt:
+      name: dbeaver-ce
+      state: latest
