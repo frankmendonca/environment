@@ -2,6 +2,11 @@
 - hosts: localhost
   become: true
   tasks:
-    - include: tasks/tools/_main.yaml
-    - include: tasks/web/_main.yaml
-    - include: tasks/dev/_main.yaml
+  - include: tasks/ubuntu/_main.yaml
+    tags: ubuntu
+  - include: tasks/tools/_main.yaml
+    tags: tools
+  - include: tasks/web/_main.yaml
+    tags: web
+  - include: tasks/dev/_main.yaml
+    tags: dev
