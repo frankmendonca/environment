@@ -1,5 +1,13 @@
 ---
 - name: "Spotify"
-  ansible.builtin.apt:
-    name: spotify-client
-    state: latest
+  block:
+  - name: "Spotify - Add Repository GPG Key"
+    apt_key:
+      url: https://download.spotify.com/debian/pubkey_0D811D58.gpg
+  - name: "Spotify - Add Repository"
+    apt_repository:
+      repo: deb http://repository.spotify.com stable non-free
+  - name: "Spotify - Install"
+    apt:
+      name: spotify-client
+      state: latest
