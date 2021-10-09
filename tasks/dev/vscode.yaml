@@ -1,5 +1,13 @@
 ---
 - name: "VS Code"
-  ansible.builtin.apt:
-    name: code
-    state: latest
+  block:
+  - name: "VS Code - Add Repo Key"
+    apt_key:
+      url: https://packages.microsoft.com/keys/microsoft.asc
+  - name: "VS Code - Add Repo"
+    apt_repository:
+      repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+  - name: "VS Code - Install"
+    apt:
+      name: code
+      state: latest
