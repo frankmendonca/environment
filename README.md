@@ -21,3 +21,19 @@ $ ansible-playbook -e user="foo" group="bar" local.yaml -K
 ```shell
 $ ./run-sudo-ansible-playbook.sh
 ```
+
+## Test with Docker
+
+### Init Docker
+
+```shell
+$ docker run --rm -v $PWD:/ansible -it ubuntu bash
+```
+
+### Inside
+
+
+```shell
+# cd /ansible
+# ./run-sudo-ansible-playbook.sh
+```
