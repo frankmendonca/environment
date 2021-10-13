@@ -1,0 +1,19 @@
+---
+- name: "Docker"
+  tags: docker
+  block:
+  - name: "Docker - Add Repo Key"
+    apt_key:
+      url: https://download.docker.com/linux/ubuntu/gpg
+  - name: "Docker - Add Repo"
+    apt_repository:
+      repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ubuntu_version }} stable
+  - name: "Docker - Install"
+    apt:
+      name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      state: latest
+  - name: "Docker - Version"
+    debug: msg="{{ lookup('pipe', 'docker --version') }}"
