@@ -1,5 +1,6 @@
 ---
 - name: "Spotify"
+  tags: spotify
   block:
   - name: "Spotify - Add Repository GPG Key"
     apt_key:

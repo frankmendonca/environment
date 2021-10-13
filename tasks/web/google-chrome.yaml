@@ -1,5 +1,6 @@
 ---
 - name: "Google Chrome"
+  tags: google-chrome
   block:
   - name: "Google Chrome - Add Repo Key"
     apt_key:

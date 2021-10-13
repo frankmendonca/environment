@@ -1,5 +1,6 @@
 ---
 - name: "Terminator"
+  tags: terminator
   apt:
     name: terminator
     state: latest

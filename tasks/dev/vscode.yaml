@@ -1,5 +1,6 @@
 ---
 - name: "VS Code"
+  tags: vscode
   block:
   - name: "VS Code - Add Repo Key"
     apt_key:

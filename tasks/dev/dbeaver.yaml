@@ -1,5 +1,6 @@
 ---
 - name: "DBeaver"
+  tags: dbeaver
   block:
   - name: "DBeaver - Add Repository"
     apt_repository:

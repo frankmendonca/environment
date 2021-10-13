@@ -1,5 +1,6 @@
 ---
 - name: "Flameshot"
+  tags: flameshot
   apt:
     name: flameshot
     state: latest

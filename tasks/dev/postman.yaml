@@ -1,5 +1,6 @@
 ---
 - name: "Postman"
+  tags: postman
   block:
   - name: "Postman - Check installation"
     stat: path=/opt/Postman

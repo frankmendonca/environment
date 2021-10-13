@@ -1,5 +1,6 @@
 ---
 - name: "Firefox"
+  tags: firefox
   apt:
     name: firefox
     state: latest
