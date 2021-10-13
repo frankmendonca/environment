@@ -1,0 +1,16 @@
+---
+- name: "Docker-Compose"
+  tags:
+  - docker
+  - docker-compose
+  block:
+  - name: "Docker-Compose - Download"
+    get_url:
+      url: https://github.com/docker/compose/releases/download/1.29.2/docker-compose-{{ linux_arch }}
+      dest: /usr/local/bin/docker-compose
+  - name: "Docker-Compose - Set as Executable"
+    file:
+      path: /usr/local/bin/docker-compose
+      mode: a+x
+  - name: "Docker-Compose - Version"
+    debug: msg="{{ lookup('pipe', 'docker-compose --version') }}"
