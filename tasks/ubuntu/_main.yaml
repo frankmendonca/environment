@@ -1,12 +1,16 @@
 ---
-- name: "Ubuntu - Install Basic Dependencies"
+- name: "Ubuntu"
   block:
   - name: "Ubuntu Install: lsb-release"
-    apt: name=lsb-release state=latest
+    apt:
+      name: lsb-release
+      state: latest
   - name: "Ubuntu Install: gpg"
-    apt: name=gpg state=latest
-- name: "Ubuntu Infos"
-  set_fact:
-    linux_arch: "{{ lookup('pipe', 'echo \"$(uname -s)-$(uname -m)\"') }}"
-    ubuntu_version: "{{ lookup('pipe', 'echo \"$(lsb_release -cs)\"') }}"
-  changed_when: false
+    apt:
+      name: gpg
+      state: latest
+  - name: "Ubuntu Infos"
+    set_fact:
+      linux_arch: "{{ lookup('pipe', 'echo $(uname -s)-$(uname -m)') }}"
+      ubuntu_version: "{{ lookup('pipe', 'lsb_release -cs') }}"
+    changed_when: false
