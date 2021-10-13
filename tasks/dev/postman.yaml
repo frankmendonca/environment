@@ -20,8 +20,8 @@
       path: /opt/Postman
       state: directory
       recurse: yes
-      owner: "{{user}}"
-      group: "{{group}}"
+      owner: "{{ user }}"
+      group: "{{ group }}"
     when: (not postman.stat.exists)
   - name: "Postman - Create Menu Icon"
     copy:
