@@ -41,5 +41,16 @@ $ docker run --rm -v $PWD:/ansible -it ubuntu bash
 
 or only "web"
 ```shell
-# ./run-sudo-ansible-playbook.sh --tags web
+# ./run-sudo-ansible-playbook.sh --tags "web"
+```
+
+or "ubuntu" and "docker"
+```shell
+# ./run-sudo-ansible-playbook.sh --tags "ubuntu,docker"
+```
+
+## List all Tasks
+
+```shell
+$ ansible-playbook local.yaml --list-tasks
 ```
