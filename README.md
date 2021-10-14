@@ -44,10 +44,16 @@ or only "web"
 # ./run-sudo-ansible-playbook.sh --tags "web"
 ```
 
-or "ubuntu" and "docker"
+or "ubuntu" and "docker" (and using verbose)
 ```shell
-# ./run-sudo-ansible-playbook.sh --tags "ubuntu,docker"
+# ./run-sudo-ansible-playbook.sh --tags "ubuntu,docker" -vv
 ```
+
+Verbose options:
+* -v
+* -vv
+* -vvv
+* -vvvv
 
 ## List all Tasks
 
